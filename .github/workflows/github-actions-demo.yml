@@ -8,3 +8,5 @@ jobs:
   job_id:
     name: 'job 1'
     runs-on: ubuntu-latest
+    steps:
+      - run: Github actions
