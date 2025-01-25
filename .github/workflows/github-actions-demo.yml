@@ -2,11 +2,18 @@ name: "workflow 1"
 
 on:
   workflow_dispatch:
-
+    inputs:
+      input1Name:
+        type: text
+        required: true
+        default: 'string'
+      input2Name:
+        type: text
+        default: ''
 jobs:
   job_id:
     name: "job 1"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: echo "Github actions"
+      - run: echo "${{ github.event.inputs.input2Name }}"
