@@ -1,9 +1,6 @@
 name: "git hub actions workflow"
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+  workflow_dispatch:
 jobs:
   job_id:
     name: "job 1"
