@@ -20,4 +20,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            ls
+            az deployment sub create -n 'rg-deployment' -l 'centralindia' -f 'infra\resourceGroup.bicep'
