@@ -27,3 +27,17 @@ jobs:
             -p applicationName='prt' \
             -p location='centralindia' \
             -p env='dev'
+
+      - name: PRT Resources Deployment
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az deployment group create \
+            -n 'prt-resource-deployment' \
+            -f 'infra\main.bicep' \
+            -p applicationName='prt' \
+            -p location='centralindia' \
+            -p administratorLogin='azureSqlUser' \
+            -p administratorLoginPassword='Ant@Win1234' \
+            -p env='dev'
