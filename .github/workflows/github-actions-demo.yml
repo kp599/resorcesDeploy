@@ -15,9 +15,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Azure CLI script
+      - name: resource group deployment
         uses: azure/cli@v2
         with:
           azcliversion: latest
           inlineScript: |
-            az account show
+            ls
