@@ -22,6 +22,7 @@ jobs:
           inlineScript: |
             az deployment sub create \
             -n 'rg-deployment' \
+            -g 'prt-rg-01' \
             -l 'centralindia' \
             -f 'infra\resourceGroup.bicep' \
             -p applicationName='prt' \
