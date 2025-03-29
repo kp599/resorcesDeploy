@@ -7,7 +7,7 @@ jobs:
   resources_deployment:
     name: "resources deployment"
     runs-on: ubuntu-latest
-    environment: production
+    environment: dev
     steps:
       - uses: actions/checkout@v2.4.0
       - name: Azure login
