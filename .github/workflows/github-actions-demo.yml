@@ -20,10 +20,10 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az deployment sub create `
-            -n 'rg-deployment' `
-            -l 'centralindia' `
-            -f 'infra\resourceGroup.bicep' `
-            -p applicationName='prt' `
-            -p location='centralindia' `
+            az deployment sub create \
+            -n 'rg-deployment' \
+            -l 'centralindia' \
+            -f 'infra\resourceGroup.bicep' \
+            -p applicationName='prt' \
+            -p location='centralindia' \
             -p env='dev'
