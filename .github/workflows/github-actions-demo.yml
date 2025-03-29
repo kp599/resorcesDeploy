@@ -1,19 +1,24 @@
-name: "workflow 1"
+name: "azure resources deployment"
 
 on:
   workflow_dispatch:
-    inputs:
-      input1Name:
-        type: text
-        required: true
-        default: 'string'
-      input2Name:
-        type: text
-        default: ''
+
 jobs:
-  job_id:
-    name: "job 1"
+  resources_deployment:
+    name: "resources deployment" 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: echo "${{ github.event.inputs.input2Name }}"
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: 'cc9c03e4-eacf-40a6-938b-c5704de53a95'
+          tenant-id: '049f2fee-9ae0-4607-9dfe-42c62355d0ad'
+          subscription-id: '86c1e246-cc63-4ad3-a9d4-dedb4577dbd5'
+
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
